@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  9proxy:
+    build: .
+    container_name: 9proxy-pod
+    privileged: true
+    ports:
+      - "2222:22"
+      - "60000-60009:60000-60009"
+    restart: unless-stopped
+    hostname: 9proxy-pod
+    environment:
+      - container=podman
+    stdin_open: true
+    tty: true
