@@ -26,7 +26,7 @@ cd 9proxy-pod
 podman build -t 9proxy-pod .
 
 # Run the container
-podman run -d --privileged \
+podman run -d \
   -p 2222:22 \
   -p 60000-60009:60000-60009 \
   --name 9proxy-pod \
@@ -40,7 +40,7 @@ podman run -d --privileged \
 podman pull ghcr.io/derlocke-ng/9proxy-pod:latest
 
 # Run the container
-podman run -d --privileged \
+podman run -d \
   -p 2222:22 \
   -p 60000-60009:60000-60009 \
   --name 9proxy-pod \
